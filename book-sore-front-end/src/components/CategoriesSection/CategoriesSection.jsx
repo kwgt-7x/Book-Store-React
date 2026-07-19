@@ -5,11 +5,10 @@ import Category from "../CategoryCard/CategoryCard";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategoriesApi } from "../../../../Book-Store/book-sore-front-end/src/features/getCategoriesApi/getCategoriesApiSlice";
+import { getCategoriesApi } from "../../features/getCategoriesApi/getCategoriesApiSlice";
 import { useEffect } from "react";
 import CategorySkeleton from "../SkeletonLoading/CategorySkeleton/CategorySkeleton";
 import Error from "../Error/Error";
-
 
 function CategoriesSection() {
 
