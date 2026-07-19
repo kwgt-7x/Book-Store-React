@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authers",
+  "info": {
+    "singularName": "auther",
+    "pluralName": "authers",
+    "displayName": "auther"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "field": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "class_icon_1": {
+      "type": "string"
+    },
+    "class_icon_2": {
+      "type": "string"
+    },
+    "class_icon_3": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "authers"
+    }
+  }
+}

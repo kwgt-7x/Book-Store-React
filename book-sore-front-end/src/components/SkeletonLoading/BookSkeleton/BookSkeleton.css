@@ -1,0 +1,99 @@
+.skeleton {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ddd;
+
+    border-radius: 8px;
+
+}
+
+[data-bs-theme="dark"] .skeleton {
+
+    background: #2d3748;
+
+}
+
+.skeleton::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    transform: translateX(-100%);
+
+    background: linear-gradient(90deg,
+
+            transparent,
+
+            rgba(255, 255, 255, .4),
+
+            transparent);
+
+    animation: skeleton 1.2s infinite;
+
+}
+
+[data-bs-theme="dark"] .skeleton::after {
+
+    background: linear-gradient(90deg,
+
+            transparent,
+
+            rgba(255, 255, 255, .08),
+
+            transparent);
+
+}
+
+@keyframes skeleton {
+
+    100% {
+
+        transform: translateX(100%);
+
+    }
+
+}
+
+.skeleton-image {
+
+    width: 100%;
+
+    height: 320px;
+
+}
+
+.skeleton-title {
+
+    width: 80%;
+
+    height: 22px;
+
+    margin: 18px auto;
+
+}
+
+.skeleton-price {
+
+    width: 35%;
+
+    height: 18px;
+
+    margin: 20px auto;
+
+}
+
+.skeleton-btn {
+
+    width: 100%;
+
+    height: 45px;
+
+    margin-top: 25px;
+
+}

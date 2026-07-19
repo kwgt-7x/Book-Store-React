@@ -1,0 +1,244 @@
+/* ==========================================================================
+   1. المتغيرات العامة (CSS Variables) - Light & Dark Mode
+   ========================================================================== */
+:root {
+    /* Backgrounds */
+    --bg-main: #F8F9FB;
+    --bg-secondary: #FFFFFF;
+    --bg-navbar: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-footer: #1D1F27;
+
+    /* Text */
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --text-light: #FFFFFF;
+
+    /* Brand */
+    --primary: #E63946;
+    --primary-hover: #D62839;
+    --secondary: #2563EB;
+    --secondary-hover: #1D4ED8;
+
+    /* Borders */
+    --border: #E5E7EB;
+
+    /* Inputs */
+    --input-bg: #FFFFFF;
+    --input-border: #D1D5DB;
+
+    /* Card Hover */
+    --card-hover: #FCFCFC;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, .06);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, .10);
+    --shadow-lg: 0 15px 40px rgba(0, 0, 0, .15);
+}
+
+[data-bs-theme="dark"] {
+    /* Backgrounds */
+    --bg-main: #111827;
+    --bg-secondary: #1F2937;
+    --bg-navbar: #111827;
+    --bg-card: #1E293B;
+    --bg-footer: #0B1120;
+
+    /* Text */
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --text-light: #FFFFFF;
+
+    /* Brand */
+    --primary: #EF4444;
+    --primary-hover: #DC2626;
+    --secondary: #3B82F6;
+    --secondary-hover: #2563EB;
+
+    /* Border */
+    --border: #374151;
+
+    /* Inputs */
+    --input-bg: #1F2937;
+    --input-border: #374151;
+
+    /* Card Hover */
+    --card-hover: #243244;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, .25);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, .35);
+    --shadow-lg: 0 15px 45px rgba(0, 0, 0, .45);
+}
+
+/* ==========================================================================
+   2. التنسيقات الأساسية وإعادة التعيين (Reset & Base Elements)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* القوائم (Unordered Lists) */
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* الروابط العامة و NavLinks الخاصة بـ React Router */
+a,
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* الصور لضمان عدم خروجها عن الحاويات */
+img {
+    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   3. كلاسات السمات والألوان المخصصة (Theme Utility Classes)
+   ========================================================================== */
+.bg-theme-main {
+    background-color: var(--bg-main) !important;
+}
+
+.bg-theme-secondary {
+    background-color: var(--bg-secondary) !important;
+}
+
+.bg-theme-navbar {
+    background-color: var(--bg-navbar) !important;
+}
+
+.bg-theme-footer {
+    background-color: var(--bg-footer) !important;
+}
+
+.bg-theme-card {
+    background-color: var(--bg-card) !important;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-theme-card:hover {
+    background-color: var(--card-hover) !important;
+}
+
+/* النصوص */
+.text-theme-primary {
+    color: var(--text-primary) !important;
+}
+
+.text-theme-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.text-theme-light {
+    color: var(--text-light) !important;
+}
+
+/* الحدود والظلال */
+.border-theme {
+    border: 1px solid var(--border) !important;
+}
+
+.shadow-theme-sm {
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow-theme-md {
+    box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-theme-lg {
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* ==========================================================================
+   4. كلاسات المدخلات والأزرار (Inputs & Buttons)
+   ========================================================================== */
+/* صناديق الإدخال */
+.input-theme {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    color: var(--text-primary) !important;
+    border-radius: 6px;
+    padding: 10px 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-theme:focus {
+    border-color: var(--secondary) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* الأزرار الموحدة */
+.btn-theme {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    width: 100%;
+}
+
+.btn-theme:active {
+    transform: scale(0.98);
+}
+
+.btn-theme-primary {
+    background-color: var(--primary) !important;
+    color: var(--text-light) !important;
+}
+
+.btn-theme-primary:hover {
+    background-color: var(--primary-hover) !important;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2) !important;
+}
+
+.btn-theme-secondary {
+    background-color: var(--secondary) !important;
+    color: var(--text-light) !important;
+}
+
+.btn-theme-secondary:hover {
+    background-color: var(--secondary-hover) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* ==========================================================================
+   5. كلاسات مساعدة للنصوص المقطوعة (سطر واحد فقط)
+   ========================================================================== */
+.ellipsis-1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+}

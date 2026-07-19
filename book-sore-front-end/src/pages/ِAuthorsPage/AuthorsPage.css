@@ -1,0 +1,85 @@
+.authors-page {
+
+    width: 90%;
+
+    margin: 20px auto 40px;
+
+}
+
+/*================ Header ================*/
+
+.page-header {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+.page-header h1 {
+
+    font-size: 2.8rem;
+
+    color: var(--text-primary);
+
+    margin: 15px 0;
+
+}
+
+.page-header p {
+
+    max-width: 720px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+
+}
+
+/*================ Grid ================*/
+
+.authors-page-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+/*================ Responsive ================*/
+
+@media(max-width:992px) {
+
+    .authors-page-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .authors-page {
+
+        width: 95%;
+
+    }
+
+    .page-header h1 {
+
+        font-size: 2.2rem;
+
+    }
+
+    .authors-page-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

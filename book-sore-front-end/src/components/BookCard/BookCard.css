@@ -1,0 +1,181 @@
+.book-card {
+
+    background: var(--bg-card);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: .35s;
+
+}
+
+.book-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+.book-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.book-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .35);
+
+    opacity: 0;
+
+    transition: .35s;
+
+    z-index: 1;
+
+}
+
+.book-card:hover .book-image::before {
+
+    opacity: 1;
+
+}
+
+.book-image img {
+
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+}
+
+.book-card:hover img {
+
+    transform: scale(1.08);
+
+}
+
+/*====================*/
+
+.book-icons {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    transform: translateY(-80px);
+
+    opacity: 0;
+
+    transition: .35s;
+
+    z-index: 5;
+
+}
+
+.book-card:hover .book-icons {
+
+    transform: translateY(0);
+
+    opacity: 1;
+
+}
+
+.book-icons button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--bg-card);
+
+    color: var(--text-primary);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.book-icons button:hover {
+
+    background: var(--primary);
+
+    color: #fff;
+
+}
+
+/*====================*/
+
+.book-content {
+
+    padding: 22px;
+
+}
+
+.book-content h3 {
+
+    color: var(--text-primary);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 15px;
+
+}
+
+.book-price {
+
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+.book-btn {
+
+    width: 100%;
+
+}
+
+.active-icon {
+
+    background: var(--primary) !important;
+
+    color: #fff !important;
+
+}

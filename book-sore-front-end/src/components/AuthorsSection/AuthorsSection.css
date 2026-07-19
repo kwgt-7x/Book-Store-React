@@ -1,0 +1,43 @@
+.authors-section {
+
+    width: 90%;
+
+    margin: 40px auto;
+
+}
+
+.authors-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+@media(max-width:992px) {
+
+    .authors-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .authors-section {
+
+        width: 95%;
+
+    }
+
+    .authors-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
