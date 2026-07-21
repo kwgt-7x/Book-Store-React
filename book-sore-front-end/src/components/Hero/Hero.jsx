@@ -11,6 +11,11 @@ import { getAllSliders } from "../../features/getAllSliderHero/getSlidersHeroSli
 import HeroSkeleton from "../SkeletonLoading/HeroSkeleton/HeroSkeleton";
 import Error from "../Error/Error";
 
+// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
+const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
+// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
+const SERVER_URL = API_URL.replace('/api', '');
+
 function Hero() {
 
     const dispatch = useDispatch()
@@ -118,7 +123,7 @@ function Hero() {
 
                                 <div className="hero-image">
 
-                                    <img src={`http://localhost:1337${item.img_hero?.url}`} alt="" />
+                                    <img src={`${SERVER_URL}${item.img_hero?.url}`} alt="" />
 
                                 </div>
 

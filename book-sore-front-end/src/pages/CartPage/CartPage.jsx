@@ -4,6 +4,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
+const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
+// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
+const SERVER_URL = API_URL.replace('/api', '');
+
 function CartPage() {
 
     const { data } = useSelector(state => state.books);
@@ -178,7 +183,7 @@ function CartPage() {
 
                                             <img
 
-                                                src={`http://localhost:1337${book.image?.url}`}
+                                                src={`${SERVER_URL}${book.image?.url}`}
 
                                                 alt={book.title}
 

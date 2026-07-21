@@ -4,6 +4,13 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 
+
+// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
+const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
+// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
+const SERVER_URL = API_URL.replace('/api', '');
+
+
 import {
     FaHeart,
     FaShoppingCart,
@@ -255,7 +262,7 @@ function BookDetailsPage() {
                 <div className="book-details-image">
 
                     <img
-                        src={`http://localhost:1337${book.image?.url}`}
+                        src={`${SERVER_URL}${book.image?.url}`}
                         alt={book.title}
                     />
 

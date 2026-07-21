@@ -2,6 +2,13 @@ import "./AuthorDetailsPage.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+
+
+// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
+const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
+// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
+const SERVER_URL = API_URL.replace('/api', '');
+
 import {
     FaArrowLeft,
     FaFacebookF,
@@ -109,7 +116,7 @@ function AuthorDetailsPage() {
             <div className="author-info">
 
                 <img
-                    src={`http://localhost:1337${author.image.url}`}
+                    src={`${SERVER_URL}${author.image.url}`}
                     alt={author.name}
                 />
 
