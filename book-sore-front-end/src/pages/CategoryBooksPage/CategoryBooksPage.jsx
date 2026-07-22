@@ -35,7 +35,7 @@ function CategoryBooksPage() {
 
             <section className="category-books-page">
 
-                <div className="section-header">
+                <div className="page-header">
 
                     <div>
 
