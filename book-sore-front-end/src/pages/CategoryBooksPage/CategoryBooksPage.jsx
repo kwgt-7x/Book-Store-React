@@ -35,6 +35,22 @@ function CategoryBooksPage() {
 
             <section className="category-books-page">
 
+                <div className="section-header">
+
+                    <div>
+
+                        <div className="skeleton skeleton-section-subtitle"></div>
+
+                        <div className="skeleton skeleton-section-title"></div>
+
+                        <div className="skeleton skeleton-section-text"></div>
+
+                    </div>
+
+                    <div className="skeleton skeleton-view-all"></div>
+
+                </div>
+
                 <div className="books-grid">
 
                     {[...Array(8)].map((_, index) => (

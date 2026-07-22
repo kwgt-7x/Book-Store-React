@@ -50,7 +50,7 @@ function CategoriesSection() {
 
                     {
 
-                        [...Array(4)].map((_, index) => (
+                        [...Array(6)].map((_, index) => (
 
                             <CategorySkeleton
                                 key={index}
