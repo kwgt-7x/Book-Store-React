@@ -5,10 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 
 
-// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
-// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
-const SERVER_URL = API_URL.replace('/api', '');
+
 
 
 import {
@@ -22,6 +19,7 @@ import toast from "react-hot-toast";
 import { getBooksApi } from "../../features/getBooksApi/getBooksApiSlice";
 import BookDetailsSkeleton from "../../components/SkeletonLoading/BookDetailsSkeleton/BookDetailsSkeleton";
 import Error from "../../components/Error/Error";
+import { getImageUrl } from "../../api";
 
 function BookDetailsPage() {
 
@@ -262,7 +260,7 @@ function BookDetailsPage() {
                 <div className="book-details-image">
 
                     <img
-                        src={`${SERVER_URL}${book.image?.url}`}
+                        src={`${getImageUrl(book.image)}`}
                         alt={book.title}
                     />
 

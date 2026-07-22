@@ -10,11 +10,9 @@ import { Link } from "react-router-dom";
 import { getAllSliders } from "../../features/getAllSliderHero/getSlidersHeroSlice";
 import HeroSkeleton from "../SkeletonLoading/HeroSkeleton/HeroSkeleton";
 import Error from "../Error/Error";
+import { getImageUrl } from "../../api";
 
-// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
-// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
-const SERVER_URL = API_URL.replace('/api', '');
+
 
 function Hero() {
 
@@ -123,7 +121,7 @@ function Hero() {
 
                                 <div className="hero-image">
 
-                                    <img src={`${SERVER_URL}${item.img_hero?.url}`} alt="" />
+                                    <img src={`${getImageUrl(item.img_hero)}`} alt="" />
 
                                 </div>
 

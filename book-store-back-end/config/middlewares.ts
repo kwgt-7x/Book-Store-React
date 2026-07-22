@@ -3,19 +3,21 @@ import type { Core } from '@strapi/strapi';
 const config: Core.Config.Middlewares = [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
   {
-    name: 'strapi::cors',
+    name: 'strapi::security',
     config: {
-      origin: [
-        'http://localhost:5173',
-        'https://book-store-react-sandy.vercel.app'
-      ],
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
-      keepHeaderOnError: true,
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          upgradeInsecureRequests: null,
+        },
+      },
     },
   },
+  'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',

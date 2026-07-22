@@ -1,9 +1,7 @@
+import { getImageUrl } from "../../api";
 import "./CategoryCard.css";
 import { Link } from "react-router-dom";
-// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
-// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
-const SERVER_URL = API_URL.replace('/api', '');
+
 
 function CategoryCard({ category }) {
     return (
@@ -15,7 +13,7 @@ function CategoryCard({ category }) {
             <div className="category-image">
 
                 <img
-                    src={`${SERVER_URL}${category.image?.url}`}
+                    src={`${getImageUrl(category.image)}`}
                     alt={category.title}
                 />
 

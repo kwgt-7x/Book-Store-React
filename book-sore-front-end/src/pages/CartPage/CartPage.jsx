@@ -3,11 +3,9 @@ import "./CartPage.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { getImageUrl } from "../../api";
 
-// 1. في أعلى الملف، عرّف المتغير الذي يقرأ رابط السيرفر
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:1337';
-// نتخلص من /api في النهاية إذا كانت موجودة للحصول على رابط السيرفر الرئيسي فقط
-const SERVER_URL = API_URL.replace('/api', '');
+
 
 function CartPage() {
 
@@ -183,7 +181,7 @@ function CartPage() {
 
                                             <img
 
-                                                src={`${SERVER_URL}${book.image?.url}`}
+                                                src={`${getImageUrl(book.image)}`}
 
                                                 alt={book.title}
 
